@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html" charset="utf-8">
+	<title>Dang nhap</title>
+	<link rel="stylesheet" href="style/style-login.css">
+</head>
+<body>
+	<div class="mainWrap" id="container" >
+		
+		<script>
+    function getAjaxEngine() {
+        return  new XMLHttpRequest() || 
+                new ActiveXObject("Msxml2.XMLHTTP") ||
+                new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    function loadContent() {
+      let xmlhttp = getAjaxEngine();
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {
+          // Nếu backend trả về JSON thì cần thay đổi khối lệnh này
+          //var obj = JSON.parse(jsonData);
+
+          // để phân tích JSON và cập nhật DOM
+          document.getElementById("container").innerHTML = xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open("GET", "./login.php");
+      xmlhttp.send(null);
+    }
+    loadContent();
+  </script> 
+	</div>
+</body>
+</html>

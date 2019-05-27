@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html" charset="utf-8">
+  <title>Quản lý</title>
+  <link rel="stylesheet" type="text/css" href="style/style-quanlydonvi.css">
+  <link rel="stylesheet" type="text/css" href="style/style-quanly.css">
+  <script type="text/javascript" src="loginscript.js"></script>
+</head>
+<body>
+  <header class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+    <div class="container-fluid navbar-nav">
+      <div class="btn-setting" data-region="drawer-toggle" style="position: relative;">
+                <button class="btn-secondary pull-xs-left">Admin Panel</button>
+      </div>
+      <a href="" class="hidden-sm-down navbar-brand has-logo">
+        <span class="logo">
+            <img src="/img/logo-outline2.png" alt="uet">
+        </span>
+      </a>
+      <div class="usermenu">
+                <div class="action-menu">
+                    <div class="menubar" role="menubar">
+                        <div class="dropdown d-inline">
+                            <a href="#" class="dropdown-toggle" title="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="userbutton">
+                                    <span class="usertext">Administrator</span>
+                                    <span class="avatars">
+                                        <span class="avatar current">
+                                            <img src="/img/ava1.jpg" title="Picture of Administrator" class="userpicture defaultuserpic" role="presentation" width="35" height="35">
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right menu align-tr-br" data-rel="menu-content" role="menu" data-align="tr-br">
+                                    <a href="#" class="dropdown-item menu-action" role="menuitem">
+                                        <i class="fa fa-user m-r-1"></i>
+                                        <span class="menu-action-text">Profile</span>
+                                    </a>
+                                    <a href="http://ufaculties.uet.vnu.edu.vn/login.html" class="dropdown-item menu-action" role="menuitem">
+                                        <i class="fa fa-sign-out m-r-1"></i>
+                                        <span class="menu-action-text">Log out</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </header>
+  
+  <table cellpadding="2" cellspacing="0">
+    <tr>
+      <td id="m1" class="thucdon-binhthuong" onmouseover="javascript:MO(this);" onmouseout="javascript:MOut(this);" onclick="javascript:MC(this);">Quản lý đơn vị</td>
+      <td id="m2" class="thucdon-binhthuong" onmouseover="javascript:MO(this);" onmouseout="javascript:MOut(this);" onclick="javascript:MC(this);">Quản lý tài khoản giảng viên</td>
+      <td id ="m3" class="thucdon-binhthuong" onmouseover="javascript:MO(this);" onmouseout="javascript:MOut(this);" onclick="javascript:MC(this);">Quản lý lĩnh vực nghiên cứu</td>
+    </tr>
+  </table>
+    <iframe id="myframe" src="quanlycanbo.html" frameBorder="0"></iframe> 
+
+  <footer id="page-footer" class="p-y-1">
+    <div class="container">
+      <div class="info">
+            <p><i class="fa"></i>voanh</p>
+            <p><i class="fa"></i>Email: voanhnd@vnu.com</p>
+            <p><i class="fa"></i>Tel: 02134678</p>
+      </div>
+      <div class="copyright text-center">
+            © 2019 CopyRight. All Rights Reserved.
+        </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    sel_ = null; //menu duoc chon
+
+    function MO(r) {
+      if (r != sel_) r.className = "thucdon-dechuot";     
+    }
+
+    function MOut(r) {
+      if (r != sel_) r.className = "thucdon-binhthuong";      
+    }
+
+    function MC(r) {
+      if (sel_ != null)  //thuc don hien tai duoc chon
+      sel_.className = "thucdon-binhthuong";
+      
+      sel_ = r; //thuc don moi duoc chon
+      sel_.className = "thucdon-duocchon";
+
+      //thuc hien cac viec khi noi dung nay duoc chon
+      //document.getElementById("alo").innerHTML = sel_.innerHTML;
+
+      frm = document.getElementById("myframe");
+      if (sel_.id == "m1") {
+        frm.src = "quanlydonvi.html";
+      } else if (sel_.id == "m2") {
+        frm.src = "quanlycanbo.html";
+      } else if (sel_.id == "m3") {
+        frm.src = "quanlylinhvuc.html";
+      }
+    }
+  </script>
+
+</body>
+</html>

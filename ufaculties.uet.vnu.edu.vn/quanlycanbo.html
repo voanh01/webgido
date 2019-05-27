@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html" charset="utf-8">
+  <title>Quản lý cán bộ</title>
+  <link rel="stylesheet" type="text/css" href="../style/style-quanlydonvi.css">
+
+</head>
+<body>
+
+  <div class="mainWarp">
+    <h2>
+        Cán bộ
+        <button type="button" class="topbutton">Thêm mới</button>
+        <button type="button" class="topbutton">Thêm từ Excel</button>
+    </h2>
+    <div id="container">
+    <script>
+    function getAjaxEngine() {
+        return  new XMLHttpRequest() || 
+                new ActiveXObject("Msxml2.XMLHTTP") ||
+                new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    
+    function loadContent() {
+      let xmlhttp = getAjaxEngine();
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {
+          // Nếu backend trả về JSON thì cần thay đổi khối lệnh này
+          //var obj = JSON.parse(jsonData);
+
+          // để phân tích JSON và cập nhật DOM
+          document.getElementById("container").innerHTML = xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open("GET", "./quanlycanbo.php", true);
+      xmlhttp.send(null);
+    }
+    loadContent();
+  </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+*{font-family:Roboto, Helvetica, Arial, sans-serif;}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary 
+{
+    display: block;
+}
+.mainWarp {
+	padding: 0 10px 0 10px;
+}
+button {
+  background-color: #005e94;
+  text: #fff;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.topbutton {
+	padding: 6px 9px 6px 9px;
+	float: right;
+	border: 3px solid #fff;
+}
+a {
+
+    background-color: transparent;
+
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	text-align: left;
+  	border-bottom: 3px solid #969696;
+}
+td {
+	border-bottom: 1px solid #969696;
+}
+td, th {
+  	padding: 8px;
+}
+
+tr:nth-child(even) {
+  	background-color: #dddddd;
+}
+
+.tab-content {
+	padding-top: 40px;
+}
+
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.field {
+  cursor: pointer;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+.field::before {
+  content: "\25B6";
+  color: blue;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.field-down::before {
+  -ms-transform: rotate(90deg); 
+  -webkit-transform: rotate(90deg); 
+  transform: rotate(90deg);  
+}
+
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+select {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}

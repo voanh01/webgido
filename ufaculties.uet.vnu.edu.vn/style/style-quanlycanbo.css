@@ -1,0 +1,19 @@
+*{font-family:Roboto, Helvetica, Arial, sans-serif;}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th {
+	text-align: left;
+  	border-bottom: 3px solid #000000;
+}
+td {
+	border-bottom: 1px solid #000000;
+}
+td, th {
+  	padding: 8px;
+}
+
+tr:nth-child(even) {
+  	background-color: #dddddd;
+}

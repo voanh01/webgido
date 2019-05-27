@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html" charset="utf-8">
+  <title>Quản lý lĩnh vực</title>
+  <link rel="stylesheet" type="text/css" href="style/style-quanlydonvi.css">
+</head>
+<body>
+
+  <div class="mainWarp">
+    <h2>Lĩnh vực nghiên cứu</h2>
+
+          <ul id="myUL">
+        <li><span class="field">ACM Coputing Classification System, 2012 Revision</span>
+                <button type="button" class="button">Thêm</button>
+          <ul class="nested">
+            <li><span class="field">General and reference</span>
+              <ul class="nested">
+                <li> ABC</li></ul>
+            <li><span class="field">Hardware</span>
+              <ul class="nested">
+                <li> DEF</li></ul>
+            <li><span class="field">Computer System Organization</span>
+              <ul class="nested">
+                <li> IKL</li></ul>
+            <li><span class="field">Network</span>
+              <ul class="nested">
+                <li> Network architectures</li>
+                <li> Network protocols</li>
+                <li> Network components</li>
+                <li> Network algorithms</li>
+                <li> Network performance evaluation</li>
+                <li> Network properties</li>
+                <li> Network services</li>
+                <li> Network types</li></ul>
+              <li><span class="field">Software and its engineering</span>
+              <li><span class="field">Theory of computation</span>
+            </li> 
+      </ul>
+        </div>
+
+        <script>
+      var toggler = document.getElementsByClassName("field");
+      var i;
+
+      for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+          this.parentElement.querySelector(".nested").classList.toggle("active");
+          this.classList.toggle("field-down");
+        });
+      }
+      </script>
+</body>
+</html>
